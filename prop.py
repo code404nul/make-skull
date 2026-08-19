@@ -314,7 +314,7 @@ class Propulsion:
 #  Exemple d'utilisation
 # ==========================================================================
 if __name__ == "__main__":
-    from mesh import CoqueMesh      # <- adapter au nom de votre module
+    from mesh import CoqueMesh
     from time import time
 
     start = time()

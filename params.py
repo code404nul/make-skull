@@ -278,37 +278,6 @@ def candidat_valide(p):
     return True, "OK"
 
 
-# ##############################################################################
-#  6) PARAMÈTRES RETIRÉS / PAS ENCORE IMPLÉMENTÉS DANS mesh.py
-# ##############################################################################
-#  Conservés en commentaire pour mémoire : les laisser dans VARIABLES_LIBRES
-#  ferait planter generate_mesh() (kwargs inconnus) ou, pire, l'optimiseur
-#  passerait du temps à faire varier des manettes SANS EFFET sur la forme.
-#
-#  Correspondances (ancien params.py -> mesh.py) :
-#     L_WL            -> L_COQUE     (mesh donne la longueur hors-tout ;
-#                                     L_WL devient un RÉSULTAT mesuré)
-#     ANGLE_DEADRISE  -> DEADRISE
-#     ANGLE_FLARE     -> FLARE
-#     RAYON_BOUCHAIN  -> F_BOUCHAIN  (étendue de l'arrondi)
-#     POIDS_NURBS_1   -> W_BOUCHAIN  (poids de la Bézier rationnelle)
-#     POIDS_NURBS_2   -> supprimé    (une seule Bézier dans la section)
-#     POS_MAITRE_BAU  -> X_MAITRE
-#     REMPLISSAGE_AV  -> REMPL_AV
-#     REMPLISSAGE_AR  -> REMPL_AR
-#
-#  Nouveaux dans mesh.py, absents de l'ancien params.py :
-#     B_ETRAVE, B_TABLEAU, ROCKER_AV, ROCKER_AR
-#
-#  Pas de contrepartie dans mesh.py (à coder si on veut les optimiser) :
-#     POIDS_PONT      = (0.5, 2.0)     le pont est une parabole imposée
-#                                      (flèche = HAUTEUR_BOMBE, pas de poids)
-#     ASYM_PONT       = (0.0, 0.15)    le pont est symétrique en y
-#     EP_AILES        = (0.001, 0.005) ailes latérales non modélisées
-#     ENVERGURE_AILES = (0.0, 0.15)
-#     VOLUME_AILES    = (0.0, 0.010)
-
-
 if __name__ == "__main__":
     # Auto-contrôle : les défauts de mesh.py tiennent-ils dans les plages ?
     ok, msg = candidat_valide(DEFAUTS_MESH)
