@@ -68,8 +68,9 @@ def score(cursor):
     )
 
     if prop.carene.resoudre():
-        print("ok")
-        return prop.score() 
+        s = prop.score()
+        print(s)
+        return s
     print("non ok")
     return 0
 
